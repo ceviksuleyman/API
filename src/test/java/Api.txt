@@ -1,0 +1,65 @@
+API( Application Programming Interface)
+=> Uygulama Programlama Arayuzu
+
+- API testi, bir uygulamanin islevselligi, guvenirligi, performansi ve guvenligi acisindan beklentileri
+karsilayip karsilamadigini kontrol etmek icin yapilir.
+
+
+-> API ve Web Service Arasindaki Fark ?
+Api ve Web Service,  uygulamalar arasinda iletisim olustururlar
+
+Web Service
+- Aralarindaki tek fark Web Service iki uygulama arasindaki iletisimi INTERNET araciligi ile yapar.
+
+API
+- Microsoft Word gibi masaustu uygulamalari, INTERNETE'e ihtiyac duymadan kendi API'larini kullanir.
+Bu yuzden Word kullandigimizda Microsoft API kullaniyoruz.
+
+
+=> NOT !!!
+ Butun Web Service'ler API'dir. Ancak butun API'lar Web Service DEGILDIR.
+
+
+Ortak HTTP Status Kodlar
+
+200(OK) => Talep karsilandi. Request gerceklesti.
+
+201(CREATED) => Database'e gonderilen datanin olusturuldugunu soyler(200 olarak da gelebilir)
+
+204(NO CONTENT) => Talep yerine getirildi ancak size cevap (response) donemiyoruz
+
+400(BAD REQUEST) => Syntax yanlis,yuksek boyutlu data ya da diger kullanici hatasi
+
+403(FORBIDDEN) => Bu data'ya erisim izniniz yok (400 olarak da gelebilir)
+
+404(NOT FOUND) => Aranilan Data bulunamadi
+
+500(INTERNAL SERVER ERROR) => Server kaynakli bir hatadir, server'in duzelmesini bekleriz
+
+
+=> Api Testlerinde hangi programlari kullaniriz ?
+1- Postman
+
+2- SOAP UI
+xml formatinda calisir
+
+3-REST/ RestFul
+REST=> REpresentational State Transfer
+Rest Api, xml ve json(Java Script Object Notation) formatlarinin ikisini de kullanabilir, kullanimi daha yaygindir
+
+Bir REST Request'i Nelerden Olusur ?
+GET, datalari okumak icindir
+POST, yeni data olusturmak icindir
+PUT, datalari tamamen guncellemek icin
+PATCH, datalari kismen guncellemek icin
+DELETE, datalari silmek icin
+
+API Endpoint Nedir ?
+Api'in istek gonderdigi ve kaynagin yasadigi yer, Endpoint'tir.
+
+
+Swagger Nedir ?
+- API'nizin, zayif kaynak kodu bilgisine sahip olsalar bile gelistiriciler ve testerlar tarafindan okunmasi ve
+anlasilmasi kolay ortak bir dil kullanarak tanimlamak icin bir framework'tur.
+- API belgeleri icin SWAGGER kullanilir. Swagger bana API endpoint'leri verir ve bunlarin nasil kullanilacagi
+hakkinda bilgilendirir.

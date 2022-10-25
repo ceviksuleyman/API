@@ -58,5 +58,22 @@ public class Get01 {
         //iv) Do Assertion(dogrulama yapma)
         response.then().assertThat().statusCode(200).contentType("application/json").statusLine("HTTP/1.1 200 OK");
 
+        // Status Code u konsola yazdir
+        System.out.println("Status Code : " + response.getStatusCode());
+
+        // Content Type i konsola yazdir
+        System.out.println("Content Type : " + response.getContentType());
+
+        // Status Line i konsola yazdir
+        System.out.println("Status Line : " + response.getStatusLine());
+
+        // Header i  konsola yazdir
+        System.out.println("Header : " + response.header("Server"));
+
+        // Headers i konsola yazdir
+        System.out.println("Headers : " + response.getHeaders());
+
+        // Time i konsola yazdiralim
+        System.out.println("Time : " + response.getTime());
     }
 }

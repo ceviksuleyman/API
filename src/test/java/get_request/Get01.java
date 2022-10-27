@@ -73,7 +73,7 @@ public class Get01 {
         System.out.println("Header : " + response.header("Date"));
 
         // Headers i konsola yazdir
-        System.out.println("Headers : " + response.getHeaders());
+        System.out.println("Headers : \n" + response.getHeaders());
 
         // Time i konsola yazdiralim
         System.out.println("Time : " + response.getTime());

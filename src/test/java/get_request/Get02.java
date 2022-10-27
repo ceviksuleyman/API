@@ -20,7 +20,7 @@ public class Get02 {
     And
         Response body contains "Not Found"
     And
-        Response body does not contain "TechProEd"
+        Response body does not contains "TechProEd"
     And
         Server is "Cowboy"
      */

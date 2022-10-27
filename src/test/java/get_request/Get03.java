@@ -30,14 +30,14 @@ public class Get03 extends JsonplaceholderBaseUrl {
     public void get03() {
 
         // Set the Url
-        spec.pathParams("first", "todos", "second", 23);
+        spec.pathParams("murtaza", "todos", "can", 23);
 
 
         //Set the Expected Data (Put, Patch ,Post)
 
 
         // Send the request and Get Response
-        Response response = given().spec(spec).when().get("/{first}/{second}");
+        Response response = given().spec(spec).when().get("/{murtaza}/{can}");
         response.prettyPrint();
 
 

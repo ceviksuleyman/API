@@ -17,7 +17,7 @@ public class Get01 {
           kisiler hakim olmayabilir ama Gherkin ile yazilan testleri anlamakta zorluk cekmeyeceklerdir.
           Gherkin dilinde kullanacagimiz keywordler;
           - Given : On Kosullar
-          - When  : Yapilacak aksiyonlar(get(), puy(), post(), patch() ve delete())
+          - When  : Yapilacak aksiyonlar(get(), put(), post(), patch() ve delete())
           - Then  : Istek yaptiktan sonra (request gonderdikten sonra) dogrulama
           - And   : Coklu islemlerde kullanacagiz
 
@@ -70,7 +70,7 @@ public class Get01 {
         System.out.println("Status Line : " + response.getStatusLine());
 
         // Header i  konsola yazdir
-        System.out.println("Header : " + response.header("Server"));
+        System.out.println("Header : " + response.header("Date"));
 
         // Headers i konsola yazdir
         System.out.println("Headers : " + response.getHeaders());

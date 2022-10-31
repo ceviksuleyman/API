@@ -1,12 +1,11 @@
 package get_request;
 
 import base_url.JsonplaceholderBaseUrl;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
+import test_data.JsonPlaceHolderTestData;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import static io.restassured.RestAssured.*;
@@ -72,9 +71,41 @@ public class Get08 extends JsonplaceholderBaseUrl {
         //System.out.println(expectedData.get("userId"));
 
         assertEquals(expectedData.get("userId"), actualData.get("userId"));
-        assertEquals(expectedData.get("id"), actualData.get("id"));
         assertEquals(expectedData.get("title"), actualData.get("title"));
         assertEquals(expectedData.get("completed"), actualData.get("completed"));
+        assertEquals("1.1 vegur", response.header("Via"));
+        assertEquals("cloudflare", response.header("Server"));
+        assertEquals(200, response.statusCode());
+
+    }
+
+    @Test
+    public void get08b() {  //test method  Dynamic Yontem
+
+        // Set the Url
+        spec.pathParams("first", "todos", "second", 2);
+
+
+        // Set the expected Data
+        JsonPlaceHolderTestData jsonPlaceObject = new JsonPlaceHolderTestData();
+        Map<String, Object> expectedDataMap = jsonPlaceObject.expectedDataMethod(1, "quis ut nam facilis et officia qui", false);
+
+        System.out.println("Map Data : " + expectedDataMap);
+
+
+        //Send The Request and Get the Response
+        Response response = given().spec(spec).when().get("/{first}/{second}");
+        response.prettyPrint();
+
+
+        // Do assertion
+        Map<String, Object> actualData = response.as(HashMap.class);
+        System.out.println("actualData : " + actualData);
+        //System.out.println(expectedData.get("userId"));
+
+        assertEquals(expectedDataMap.get("userId"), actualData.get("userId"));
+        assertEquals(expectedDataMap.get("title"), actualData.get("title"));
+        assertEquals(expectedDataMap.get("completed"), actualData.get("completed"));
         assertEquals("1.1 vegur", response.header("Via"));
         assertEquals("cloudflare", response.header("Server"));
         assertEquals(200, response.statusCode());

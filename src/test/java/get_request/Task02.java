@@ -50,10 +50,10 @@ public class Task02 extends GoRestBaseUrl {
         json.prettyPrint();
 
         assertNull(json.getString("meta"));
-        assertEquals("Navin Talwar", json.getString("data.name"));
-        assertEquals("navin_talwar@mclaughlin.name", json.getString("data.email"));
+        assertEquals("Kanaka Jain", json.getString("data.name"));
+        assertEquals("kanaka_jain@stark.net", json.getString("data.email"));
         assertEquals("male", json.getString("data.gender"));
-        assertEquals("inactive", json.getString("data.status"));
+        assertEquals("active", json.getString("data.status"));
         assertEquals(200, response.statusCode());
 
     }

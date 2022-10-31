@@ -58,19 +58,19 @@ public class Get10 extends GoRestBaseUrl {
         // direkt inner map'a data girdik
         Map<String, Object> expectedTestData =
                 goRestTestData.expectedDataMethod(null, goRestTestData.dataKeyMap(
-                        "Navin Talwar",
-                        "navin_talwar@mclaughlin.name",
+                        "Kanaka Jain",
+                        "kanaka_jain@stark.net",
                         "male",
-                        "inactive"));
+                        "active"));
 
         //=====================================================================
 
         //once inner map'i olusturduk
         Map<String, String> dataKeyMap = goRestTestData.dataKeyMap(
-                "Navin Talwar",
-                "navin_talwar@mclaughlin.name",
+                "Kanaka Jain",
+                "kanaka_jain@stark.net",
                 "male",
-                "inactive");
+                "active");
         // expextedDataya inner mapi girdik
         Map<String, Object> expectedTestData2 =
                 goRestTestData.expectedDataMethod(null, dataKeyMap);

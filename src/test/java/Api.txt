@@ -63,3 +63,26 @@ Swagger Nedir ?
 anlasilmasi kolay ortak bir dil kullanarak tanimlamak icin bir framework'tur.
 - API belgeleri icin SWAGGER kullanilir. Swagger bana API endpoint'leri verir ve bunlarin nasil kullanilacagi
 hakkinda bilgilendirir.
+
+
+
+API nedir ?
+-> Bir arayuzdur. herhangi DB veya WS'ye ulasmak icin kullandigimiz yol, http request kullanir.
+
+
+API nasil calisir ?
+
+
+API ve Web Service Farki ?
+->  Butun Web Service'ler API'dir. Ancak butun API'lar Web Service DEGILDIR.
+
+
+SOAP ve Rest Farki ?
+-> Soap finansal ve odeme ..daha guvenlidir,daha yavastir
+->
+
+Postman ?
+
+
+Json File ?
+

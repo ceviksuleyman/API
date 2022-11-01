@@ -23,16 +23,15 @@ public class Task02 extends GoRestBaseUrl {
    And
        Response body should be like
     {
-   {
     "meta": null,
     "data": {
         "id": 2986,
-        "name": "Navin Talwar",
-        "email": "navin_talwar@mclaughlin.name",
+        "name": "Kanaka Jain",
+        "email": "kanaka_jain@stark.net",
         "gender": "male",
-        "status": "inactive"
+        "status": "active"
     }
-  }
+}
   */
 
     @Test

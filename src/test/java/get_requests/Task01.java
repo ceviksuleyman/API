@@ -1,4 +1,4 @@
-package get_request;
+package get_requests;
 
 import base_url.AutoExerciseBaseUrl;
 import io.restassured.path.json.JsonPath;
@@ -6,8 +6,6 @@ import io.restassured.response.Response;
 import org.junit.Test;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.*;

@@ -68,20 +68,24 @@ hakkinda bilgilendirir.
 
 API nedir ?
 -> Bir arayuzdur. herhangi DB veya WS'ye ulasmak icin kullandigimiz yol, http request kullanir.
-
+-> Bir uygulamanin izin verdigi kadar endpointlerini kullanabilme
 
 API nasil calisir ?
+-> http requestleri kullanarak bizden aldigi servere'a iletir serverden aldigi response'lari bize getirir.
 
 
 API ve Web Service Farki ?
 ->  Butun Web Service'ler API'dir. Ancak butun API'lar Web Service DEGILDIR.
+-> Api'lar icin internete ihtiyac yok WS icin internet sart
+
 
 
 SOAP ve Rest Farki ?
--> Soap finansal ve odeme ..daha guvenlidir,daha yavastir
+-> Soap finansal ve odeme noktalari ile ilgili uygulamarda kullanilir ..daha guvenlidir,daha yavastir
 ->
 
 Postman ?
+-> API'lari test etmek icin kullanilan bir tool ,JS kullanilarak da basit testler yapilabiliyor uzerinde
 
 
 Json File ?

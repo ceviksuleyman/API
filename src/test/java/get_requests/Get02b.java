@@ -1,10 +1,8 @@
-package get_request;
+package get_requests;
 
 import base_url.ReqresBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
-
-import java.util.List;
 
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.*;

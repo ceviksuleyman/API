@@ -1,10 +1,9 @@
-package get_request;
+package get_requests;
 
 import base_url.ReqresBaseUrl;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
-import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 

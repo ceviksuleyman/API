@@ -1,4 +1,4 @@
-package get_requests;
+package get_requests.session01;
 
 import base_url.JsonplaceholderBaseUrl;
 import io.restassured.http.ContentType;

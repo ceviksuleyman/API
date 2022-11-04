@@ -8,20 +8,21 @@ import pojos.BookingDatesPojo;
 import pojos.BookingPojo;
 
 import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertEquals;
 
 public class Get12Pojo extends RestfulBaseUrl {
      /*
      Given
-         https://restful-booker.herokuapp.com/booking/18
+         https://restful-booker.herokuapp.com/booking/15
      When
          I send GET Request to the URL
      Then
          Status code is 200
      And
          Response body is like:
-                       {
-    "firstname": "Dane",
-    "lastname": "Combs",
+     {
+    "firstname": "Fabio",
+    "lastname": "Colque",
     "totalprice": 111,
     "depositpaid": true,
     "bookingdates": {
@@ -36,14 +37,14 @@ public class Get12Pojo extends RestfulBaseUrl {
     public void get12Pojo() {
 
         // set the url
-        spec.pathParams("1", "booking", "2", "18");
+        spec.pathParams("1", "booking", "2", "15");
 
 
         // set the expected data
         BookingDatesPojo bookingDatesPojo = new BookingDatesPojo("2018-01-01", "2019-01-01");
         System.out.println("datesPojo = " + bookingDatesPojo);
 
-        BookingPojo expectedData = new BookingPojo("Dane", "Combs", 111, true, bookingDatesPojo, "Breakfast");
+        BookingPojo expectedData = new BookingPojo("Fabio", "Colque", 111, true, bookingDatesPojo, "Breakfast");
         System.out.println("expectedData = " + expectedData);
 
 
@@ -56,18 +57,19 @@ public class Get12Pojo extends RestfulBaseUrl {
         BookingPojo actualData = response.as(BookingPojo.class); // De-serialization
         System.out.println("actualData = " + actualData);
 
-        Assert.assertEquals(expectedData.getFirstname(), actualData.getFirstname());
-        Assert.assertEquals(expectedData.getLastname(), actualData.getLastname());
-        Assert.assertEquals(expectedData.getTotalprice(), actualData.getTotalprice());
-        Assert.assertEquals(expectedData.getDepositpaid(), actualData.getDepositpaid());
-        Assert.assertEquals(expectedData.getAdditionalneeds(), actualData.getAdditionalneeds());
+        assertEquals(expectedData.getFirstname(), actualData.getFirstname());
+        assertEquals(expectedData.getLastname(), actualData.getLastname());
+        assertEquals(expectedData.getTotalprice(), actualData.getTotalprice());
+        assertEquals(expectedData.getDepositpaid(), actualData.getDepositpaid());
+        assertEquals(expectedData.getAdditionalneeds(), actualData.getAdditionalneeds());
 
         //1.yontem
-        Assert.assertEquals(expectedData.getBookingdates().getCheckin(), actualData.getBookingdates().getCheckin());
-        Assert.assertEquals(expectedData.getBookingdates().getCheckout(), actualData.getBookingdates().getCheckout());
-        //2.yontem
-        Assert.assertEquals(expectedData.getBookingdates().getCheckin(), bookingDatesPojo.getCheckin());
-        Assert.assertEquals(expectedData.getBookingdates().getCheckout(), bookingDatesPojo.getCheckout());
+        assertEquals(expectedData.getBookingdates().getCheckin(), actualData.getBookingdates().getCheckin());
+        assertEquals(expectedData.getBookingdates().getCheckout(), actualData.getBookingdates().getCheckout());
 
+
+        //2.yontem
+        assertEquals(bookingDatesPojo.getCheckin(), actualData.getBookingdates().getCheckin());
+        assertEquals(bookingDatesPojo.getCheckout(), actualData.getBookingdates().getCheckout());
     }
 }

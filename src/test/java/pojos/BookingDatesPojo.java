@@ -36,6 +36,8 @@ public class BookingDatesPojo {
     }
 
     // 4. toString() method'unu olustur
+
+
     @Override
     public String toString() {
         return "BookingDatesPojo{" +

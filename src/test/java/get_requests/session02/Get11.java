@@ -42,7 +42,7 @@ public class Get11 extends GoRestBaseUrl {
 
         // 3. Send The Request And Get The Response
         Response response = given().spec(spec).when().get("/{first}");
-        //response.prettyPrint();
+        response.prettyPrint();
 
         // 4. Do Assertion
         response.
@@ -53,13 +53,13 @@ public class Get11 extends GoRestBaseUrl {
                         "meta.pagination.links.current", equalTo("https://gorest.co.in/public/v1/users?page=1"),
                         "data", hasSize(10),
                         "data.status", hasItem("active"),
-                        "data.name", hasItems("Sunita Ahuja", "Bhadran Mehra LLD", "Daevika Bhat"));
+                        "data.name", hasItems("Prasad Butt", "Girish Gill II", "Sarvin Bhattacharya"));
 
 
-        // 1.yontem  The female users are less than or equals to male users
+        // 1.yontem  Kadın kullanıcılar erkek kullanıcılara eşit veya daha az
         JsonPath json = response.jsonPath();
         List<String> gender = json.getList("data.gender");
-        System.out.println(gender);
+        System.out.println("genders -> " + gender);
 
         int maleCount = 0;
         int femaleCount = 0;
@@ -76,6 +76,7 @@ public class Get11 extends GoRestBaseUrl {
         //2.yontem
         List<String> femaleNames = response.jsonPath().getList("data.findAll{it.gender=='female'}.name");
         System.out.println("femaleNames = " + femaleNames);
+
         List<String> maleNames = response.jsonPath().getList("data.findAll{it.gender=='male'}.name");
         System.out.println("maleNames = " + maleNames);
 

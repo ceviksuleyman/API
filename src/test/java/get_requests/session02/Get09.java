@@ -3,7 +3,7 @@ package get_requests.session02;
 import base_url.RestfulBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
-import test_data.RestfulTestData;
+import test_data.RestfulTestData_0;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -56,7 +56,7 @@ public class Get09 extends RestfulBaseUrl {
 
 
         // testdata class'dan obje
-        RestfulTestData restfulTestData = new RestfulTestData();
+        RestfulTestData_0 restfulTestData = new RestfulTestData_0();
         Map<String, Object> expectedDataMap = restfulTestData.expectedRestful(
                 "Sally",
                 "Brown",

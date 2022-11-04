@@ -50,7 +50,11 @@ public class Post01 extends JsonplaceholderBaseUrl {
 
 
         // Do Assertion
+        Assert.assertEquals(201,response.statusCode());
+
         Map<String, Object> actualData = response.as(HashMap.class); // De-serialization ->  Gson  json'dan javaya
+
+
         Assert.assertEquals(expectedData.get("completed"),actualData.get("completed"));
         Assert.assertEquals(expectedData.get("title"),actualData.get("title"));
         Assert.assertEquals(expectedData.get("userId"),actualData.get("userId"));

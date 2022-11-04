@@ -18,7 +18,7 @@ public class Post02 extends RestfulBaseUrl {
        1) https://restful-booker.herokuapp.com/booking
        2) {
             "firstname": "Murtaza",
-            "lastname": "Doe",
+            "lastname": "Can",
             "totalprice": 11111,
             "depositpaid": true,
             "bookingdates": {
@@ -35,7 +35,7 @@ public class Post02 extends RestfulBaseUrl {
                          "bookingid": 5315,
                          "booking": {
                              "firstname": "Murtaza",
-                             "lastname": "Doe",
+                             "lastname": "Can",
                              "totalprice": 11111,
                              "depositpaid": true,
                              "bookingdates": {
@@ -58,7 +58,7 @@ public class Post02 extends RestfulBaseUrl {
 
         Map<String, String> bookingDates = testData.bookingDatesMethod("2021-09-09", "2021-09-21");  // bookingDates
 
-        Map<String, Object> expectedData = testData.expectedDataMethod("Murtaza", "Doe", 11111, true, bookingDates); // Gonderdigim data Payload
+        Map<String, Object> expectedData = testData.expectedDataMethod("Murtaza", "Can", 11111, true, bookingDates); // Gonderdigim data Payload
 
         System.out.println("expectedData = " + expectedData);
 

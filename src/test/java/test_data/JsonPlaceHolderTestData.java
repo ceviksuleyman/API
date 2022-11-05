@@ -22,7 +22,7 @@ public class JsonPlaceHolderTestData {
         return expectedData;
     }
 
-    public String expectedDataInString(Integer userId, String title, Boolean completed) {
+    public String expectedDataInString(Integer userId, String title, Boolean completed) { // dinamik expected data method
 
 
         String expectedData = " {\n" +

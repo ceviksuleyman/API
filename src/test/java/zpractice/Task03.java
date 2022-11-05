@@ -1,4 +1,4 @@
-package get_requests;
+package zpractice;
 
 import base_url.ReqresBaseUrl;
 import io.restassured.response.Response;

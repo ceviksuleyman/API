@@ -1,4 +1,4 @@
-package get_requests;
+package zpractice;
 
 import base_url.AutoExerciseBaseUrl;
 import io.restassured.path.json.JsonPath;

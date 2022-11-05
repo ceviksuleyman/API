@@ -1,5 +1,9 @@
 package test_data;
 
+import io.restassured.response.Response;
+import org.codehaus.jackson.map.ObjectMapper;
+
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,14 +22,15 @@ public class JsonPlaceHolderTestData {
         return expectedData;
     }
 
+    public String expectedDataInString(Integer userId, String title, Boolean completed) {
 
 
+        String expectedData = " {\n" +
+                "                 \"userId\": " + userId + ",\n" +
+                "                 \"title\": \"" + title + "\",\n" +
+                "                 \"completed\": " + completed + "\n" +
+                "                 }";
 
-    public Map<String, String> title(String title) {
-
-        Map<String, String> expectedTitle = new HashMap<>();
-        expectedTitle.put("title", title);
-
-        return expectedTitle;
+        return expectedData;
     }
 }

@@ -2,10 +2,9 @@ package get_requests.session02;
 
 import base_url.RestfulBaseUrl;
 import io.restassured.response.Response;
-import org.junit.Assert;
 import org.junit.Test;
-import pojos.BookingDatesPojo;
-import pojos.BookingPojo;
+import pojos.bookingPojo.BookingDatesPojo;
+import pojos.bookingPojo.BookingPojo;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;

@@ -1,5 +1,8 @@
-package pojos;
+package pojos.bookingPojo;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class BookingDatesPojo {
 
     // 1. tum keyler icin private variables olusturduk

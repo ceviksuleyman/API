@@ -1,12 +1,9 @@
-package get_requests.session02;
+package get_requests.get02;
 
 import base_url.JsonplaceholderBaseUrl;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Assert;
 import org.junit.Test;
-import pojos.jsonPlaceHolderPojo.JsonPlaceHolderPojo;
 import test_data.JsonPlaceHolderTestData;
 import utils.ObjectMapperUtils;
 

@@ -39,7 +39,7 @@ public class Exercise01 {
                 statusLine("HTTP/1.1 200 OK");
 
         JsonPath json = response.jsonPath();
-        json.prettyPrint();
+        //json.prettyPrint();
 
         List<String> poloList = json.getList("brands.findAll{it.brand=='Polo'}.brand");
         System.out.println("poloList = " + poloList);
@@ -47,6 +47,7 @@ public class Exercise01 {
         System.out.println("listHM = " + listHM);
         System.out.println("poloList.size() = " + poloList.size());
         System.out.println("listHM.size() = " + listHM.size());
+        System.out.println(json.getList("brands.findAll{it.brand=='Polo'}.brand"));
 
         Assert.assertNotEquals(poloList.size(), listHM.size());
         Assert.assertNotEquals(json.getList("brands.findAll{it.brand=='Polo'}.brand").size(), json.getList("brands.findAll{it.brand=='H&M'}.brand").size());

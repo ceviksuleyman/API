@@ -1,4 +1,4 @@
-package get_requests.session01;
+package get_requests.get01;
 
 import base_url.JsonplaceholderBaseUrl;
 import io.restassured.path.json.JsonPath;

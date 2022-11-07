@@ -1,4 +1,4 @@
-package get_requests.session02;
+package get_requests.get02;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;

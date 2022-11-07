@@ -1,4 +1,4 @@
-package get_requests.session01;
+package get_requests.get01;
 
 import io.restassured.response.Response;
 import org.junit.Test;

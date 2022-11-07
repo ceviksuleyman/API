@@ -41,11 +41,14 @@ public class Exercise01 {
         JsonPath json = response.jsonPath();
         json.prettyPrint();
 
-        List<String> poloList = json.getList("brands.findAll{it.brand='Polo'}.brand");
-        List<String> listHM = json.getList("brands.findAll{it.brand='Polo'}.brand");
+        List<String> poloList = json.getList("brands.findAll{it.brand=='Polo'}.brand");
+        System.out.println("poloList = " + poloList);
+        List<String> listHM = json.getList("brands.findAll{it.brand=='H&M'}.brand");
+        System.out.println("listHM = " + listHM);
         System.out.println("poloList.size() = " + poloList.size());
         System.out.println("listHM.size() = " + listHM.size());
 
-        Assert.assertEquals(json.getList("brands.findAll{it.brand='Polo'}.brand").size(),json.getList("brands.findAll{it.brand='H&M'}.brand").size());
+        Assert.assertNotEquals(poloList.size(), listHM.size());
+        Assert.assertNotEquals(json.getList("brands.findAll{it.brand=='Polo'}.brand").size(), json.getList("brands.findAll{it.brand=='H&M'}.brand").size());
     }
 }

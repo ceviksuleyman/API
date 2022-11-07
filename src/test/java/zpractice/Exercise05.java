@@ -1,10 +1,12 @@
 package zpractice;
 
+import org.junit.Test;
+
 public class Exercise05 {
 
     //5:
     /*
-    https://petstore.swagger.io/ documantation adresini kullanarak 'user' oluşturan ve oluşsan bu user'ı silen bir otomasyon kodu yazınız.
+    https://petstore.swagger.io/v2 documantation adresini kullanarak 'user' oluşturan ve oluşsan bu user'ı silen bir otomasyon kodu yazınız.
 
    {
   "id": 0,
@@ -18,4 +20,9 @@ public class Exercise05 {
 }
     */
 
+    @Test
+    public void e05() {
+
+
+    }
 }

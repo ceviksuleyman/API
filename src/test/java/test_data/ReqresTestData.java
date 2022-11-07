@@ -27,5 +27,13 @@ public class ReqresTestData {
 
         return support;
     }
+    public String expectedDataInStringReqres(String name, String job) {
+
+        String jsonInString = "{\n" +
+                "                \"name\": \"" + name + "\",\n" +
+                "                \"job\": \"" + job + "\"\n" +
+                "                }";
+        return jsonInString;
+    }
 
 }

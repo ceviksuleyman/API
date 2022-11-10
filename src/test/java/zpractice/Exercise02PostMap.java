@@ -41,8 +41,17 @@ public class Exercise02PostMap extends ReqresBaseUrl {
         spec.pathParam("1", "users");
 
         // set the expected data
+
+        //String jsonInString2 = "{\n" +
+        //        "                \"name\": \"morpheus\",\n" +
+        //        "                \"job\": \"leader\"\n" +
+        //        "                }";
+
+
+        //String jsonInString = new ReqresTestData().expectedDataInStringReqres("morpheus", "leader");
         String jsonInString = new ReqresTestData().expectedDataInStringReqres("morpheus", "leader");
         Map<String, String> expectedData = ObjectMapperUtils.convertJsonToJava(jsonInString, Map.class);
+
         System.out.println("expectedData = " + expectedData);
 
 
@@ -54,6 +63,7 @@ public class Exercise02PostMap extends ReqresBaseUrl {
         // do assertion
         Map<String, String> actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), Map.class);
         System.out.println("actualData = " + actualData);
+
         Assert.assertEquals(201, response.statusCode());
         Assert.assertEquals(expectedData.get("name"), actualData.get("name"));
         Assert.assertEquals(expectedData.get("job"), actualData.get("job"));

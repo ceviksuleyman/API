@@ -38,6 +38,7 @@ public class Exercise04PatchMap extends ReqresBaseUrl {
         String jsonInString = "{\n" +
                 "                \"name\": \"neo\"\n" +
                 "               }";
+
         Map expectedData = ObjectMapperUtils.convertJsonToJava(jsonInString, Map.class);
         System.out.println("expectedData = " + expectedData);
 

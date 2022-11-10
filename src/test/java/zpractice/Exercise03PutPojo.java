@@ -43,9 +43,11 @@ public class Exercise03PutPojo extends ReqresBaseUrl {
         Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData).when().put("/{1}/{2}");
         response.prettyPrint();
 
+
         ReqresPojo actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), ReqresPojo.class);
         System.out.println("actualData = " + actualData);
 
+        Assert.assertEquals(200,response.getStatusCode());
         Assert.assertEquals(expectedData.getName(), actualData.getName());
         Assert.assertEquals(expectedData.getJob(), actualData.getJob());
     }

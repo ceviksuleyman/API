@@ -8,7 +8,7 @@ public class ObjectMapperUtils {
 
     //new ObjectMapper().readValue(jsonInString, HashMap.class);
 
-    private static final ObjectMapper mapper; //final
+    private static ObjectMapper mapper; //final
 
     static {
 
@@ -17,8 +17,8 @@ public class ObjectMapperUtils {
 
     public static <T> T convertJsonToJava(String json, Class<T> cls) { // Generic -> Method json'i java'ya cevir
 
-        // T javaResult = null;
-        T javaResult;
+        T javaResult = null;
+        //T javaResult;
         try {
             javaResult = mapper.readValue(json, cls);
         } catch (IOException e) {

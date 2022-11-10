@@ -28,7 +28,7 @@ public class Exercise05 {
   "userStatus": 0
 }
 
-post response
+ post response
 {
     "code": 200,
     "type": "unknown",
@@ -47,7 +47,10 @@ post response
         // post
         String url = "https://petstore.swagger.io/v2/user/";
 
-        SwaggerPojo postData = new SwaggerPojo(199, "Javacan", "Murtaza", "Can", "Mc@gmail.com", "qwerty123", "02342343", 0);
+        SwaggerPojo postData = new SwaggerPojo(199, "Javacan", "Murtaza", "Can",
+                "Mc@gmail.com", "qwerty123", "02342343", 0);
+
+
         SwaggerResponseBodyPojo expectedData = new SwaggerResponseBodyPojo(200, "unknown", "199");
         System.out.println("expectedData = " + expectedData);
 
@@ -59,11 +62,11 @@ post response
         SwaggerResponseBodyPojo actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), SwaggerResponseBodyPojo.class);
         System.out.println("actualData = " + actualData);
 
-
         assertEquals(200, response.getStatusCode());
         assertEquals(expectedData.getCode(), actualData.getCode());
         assertEquals(expectedData.getType(), actualData.getType());
         assertEquals(expectedData.getMessage(), actualData.getMessage());
+
 
         // get
         String url1 = "https://petstore.swagger.io/v2/user/Javacan";
@@ -72,13 +75,12 @@ post response
         responseGet.prettyPrint();
 
 
-
         // delete
         String url2 = "https://petstore.swagger.io/v2/user/Javacan";
 
-
         SwaggerResponseBodyPojo expectedDataDelete = new SwaggerResponseBodyPojo(200, "unknown", "Javacan");
         System.out.println("expectedDataDelete = " + expectedDataDelete);
+
 
         Response response1 = given().contentType(ContentType.JSON).when().delete(url2);
         response1.prettyPrint();
@@ -86,8 +88,9 @@ post response
         SwaggerResponseBodyPojo actualDataDelete = ObjectMapperUtils.convertJsonToJava(response1.asString(), SwaggerResponseBodyPojo.class);
         System.out.println("actualDataDelete = " + actualDataDelete);
 
-        assertEquals(expectedDataDelete.getCode(),actualDataDelete.getCode());
-        assertEquals(expectedDataDelete.getType(),actualDataDelete.getType());
-        assertEquals(expectedDataDelete.getMessage(),actualDataDelete.getMessage());
+        assertEquals(200,response1.getStatusCode());
+        assertEquals(expectedDataDelete.getCode(), actualDataDelete.getCode());
+        assertEquals(expectedDataDelete.getType(), actualDataDelete.getType());
+        assertEquals(expectedDataDelete.getMessage(), actualDataDelete.getMessage());
     }
 }

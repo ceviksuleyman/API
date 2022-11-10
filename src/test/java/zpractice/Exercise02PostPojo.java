@@ -36,8 +36,10 @@ public class Exercise02PostPojo extends ReqresBaseUrl {
 
         spec.pathParam("1", "users");
 
+
         ReqresPojo expectedData = new ReqresPojo("morpheus", "leader");
         System.out.println("expectedData = " + expectedData);
+
 
         Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData).when().post("/{1}");
         response.prettyPrint();

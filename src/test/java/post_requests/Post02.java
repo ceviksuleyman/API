@@ -39,8 +39,8 @@ public class Post02 extends RestfulBaseUrl {
        {
                          "bookingid": 5315,
                          "booking": {
-                             "firstname": "Murtaza",
-                             "lastname": "Can",
+                             "firstname": "Fayza",
+                             "lastname": "Ayhan",
                              "totalprice": 11111,
                              "depositpaid": true,
                              "bookingdates": {
@@ -61,8 +61,8 @@ public class Post02 extends RestfulBaseUrl {
         // 2. Set The Expected Data ( put, post, patch)
         RestfulTestData testData = new RestfulTestData();
         Map<String, String> bookingDates = testData.bookingDatesMethod("2021-09-09", "2021-09-21");  // bookingDates
-        Map<String, Object> expectedData = testData.expectedDataMethod("Murtaza",
-                "Can",
+        Map<String, Object> expectedData = testData.expectedDataMethod("Fayza",
+                "Ayhan",
                 11111,
                 true,
                 bookingDates); // Gonderdigim data Payload
@@ -73,11 +73,12 @@ public class Post02 extends RestfulBaseUrl {
         File file = new File("src/test/java/TestData/postBody.json");
         FileReader fileReader = new FileReader(file);
         JSONTokener jsonTokener = new JSONTokener(fileReader);
-        JSONObject expectedData1 = new JSONObject(jsonTokener);
-        System.out.println("expectedData1 = " + expectedData1.toString());
+        JSONObject expectedDataJSONObject = new JSONObject(jsonTokener);
+
+        System.out.println("expectedData1 = " + expectedDataJSONObject.toString());
 
         // 3. Send The Request And Get The Response
-        Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData1.toString()).when().post("/{first}");
+        Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedDataJSONObject.toString()).when().post("/{first}");
         response.prettyPrint();
 
 
@@ -99,12 +100,12 @@ public class Post02 extends RestfulBaseUrl {
 
 
         // JSONObject
-        assertEquals(expectedData1.get("firstname"), ((Map) actualData.get("booking")).get("firstname"));
-        assertEquals(expectedData1.get("lastname"), ((Map) actualData.get("booking")).get("lastname"));
-        assertEquals(expectedData1.get("totalprice"), ((Map) actualData.get("booking")).get("totalprice"));
-        assertEquals(expectedData1.get("depositpaid"), ((Map) actualData.get("booking")).get("depositpaid"));
+        assertEquals(expectedDataJSONObject.getString("firstname"), ((Map) actualData.get("booking")).get("firstname"));
+        assertEquals(expectedDataJSONObject.getString("lastname"), ((Map) actualData.get("booking")).get("lastname"));
+        assertEquals(expectedDataJSONObject.getInt("totalprice"), ((Map) actualData.get("booking")).get("totalprice"));
+        assertEquals(expectedDataJSONObject.getBoolean("depositpaid"), ((Map) actualData.get("booking")).get("depositpaid"));
 
-        assertEquals(expectedData1.getJSONObject("bookingdates").getString("checkin"), ((Map) ((Map) actualData.get("booking")).get("bookingdates")).get("checkin"));
-        assertEquals(expectedData1.getJSONObject("bookingdates").getString("checkout"), ((Map) ((Map) actualData.get("booking")).get("bookingdates")).get("checkout"));
+        assertEquals(expectedDataJSONObject.getJSONObject("bookingdates").getString("checkin"), ((Map) ((Map) actualData.get("booking")).get("bookingdates")).get("checkin"));
+        assertEquals(expectedDataJSONObject.getJSONObject("bookingdates").getString("checkout"), ((Map) ((Map) actualData.get("booking")).get("bookingdates")).get("checkout"));
     }
 }

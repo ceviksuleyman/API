@@ -85,6 +85,9 @@ public class Post02 extends RestfulBaseUrl {
         // 4. Do Assertion
         Map<String, Object> actualData = response.as(HashMap.class); //
         System.out.println("actualData = " + actualData);
+        JSONObject actualDataJsonObject = new JSONObject(response.asString());
+        System.out.println("actualDataJsonObject = " + actualDataJsonObject);
+
 
         assertEquals(expectedData.get("firstname"), ((Map) actualData.get("booking")).get("firstname"));
         assertEquals(expectedData.get("lastname"), ((Map) actualData.get("booking")).get("lastname"));

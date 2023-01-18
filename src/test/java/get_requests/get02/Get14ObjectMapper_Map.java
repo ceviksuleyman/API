@@ -4,7 +4,7 @@ import base_url.JsonplaceholderBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
-import test_data.JsonPlaceHolderTestData;
+import TestData.JsonPlaceHolderTestData;
 import utils.ObjectMapperUtils;
 
 import java.util.Map;

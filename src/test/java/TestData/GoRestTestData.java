@@ -1,6 +1,5 @@
-package test_data;
+package TestData;
 
-import java.awt.desktop.PreferencesEvent;
 import java.util.HashMap;
 import java.util.Map;
 

@@ -5,7 +5,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
-import test_data.ReqresTestData;
+import TestData.ReqresTestData;
 import utils.ObjectMapperUtils;
 
 import java.util.Map;

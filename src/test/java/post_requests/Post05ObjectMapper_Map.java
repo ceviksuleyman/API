@@ -6,7 +6,7 @@ import io.restassured.response.Response;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Assert;
 import org.junit.Test;
-import test_data.JsonPlaceHolderTestData;
+import TestData.JsonPlaceHolderTestData;
 
 import java.io.IOException;
 import java.util.HashMap;

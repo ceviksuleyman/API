@@ -1,9 +1,5 @@
-package test_data;
+package TestData;
 
-import io.restassured.response.Response;
-import org.codehaus.jackson.map.ObjectMapper;
-
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 

@@ -3,7 +3,7 @@ package get_requests.get02;
 import base_url.GoRestBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
-import test_data.GoRestTestData;
+import TestData.GoRestTestData;
 
 import java.util.HashMap;
 import java.util.Map;
